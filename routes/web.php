@@ -13,3 +13,5 @@
 
 Route::get('/', "SearchController@index");
 Route::post('/search', "SearchController@search");
+Route::get('/{type}/{href}', "InfoController@getInfo");
+
