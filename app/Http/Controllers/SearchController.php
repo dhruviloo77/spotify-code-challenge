@@ -1,7 +1,6 @@
 <?php
 
 namespace App\Http\Controllers;
-
 use GuzzleHttp\Client;
 use Illuminate\Http\Request;
 
@@ -16,11 +15,10 @@ class SearchController extends Controller
         return view('index');
     }
 
-    public function sendRequest(Request $request)
-    {
+    public function sendRequest(Request $request) {
 
         $q = $request->get('query');
-        //  $type = 'type='.$type;
+      //  $type = 'type='.$type;
 
         $client = new Client([
             // Base URI is used with relative requests
@@ -29,13 +27,12 @@ class SearchController extends Controller
 
         $auth = new SpotifyController();
         $head = $auth->getAccessToken();
-
+        
         $response = $client->request('GET', '', [
             'query' => [
                 'q' => $q,
                 'type' => 'track,artist,album',
                 'limit' => 3,
-                'offset' => 0,
             ],
             'headers' => [
                 'Content-Type' => 'application/json',
@@ -46,8 +43,8 @@ class SearchController extends Controller
 
         $body = json_decode((string) $response->getBody());
 
-        //dd($body);
         return $body;
+
     }
 
 
@@ -60,8 +57,6 @@ class SearchController extends Controller
         $artists = $data->artists->items;
         $tracks = $data->tracks->items;
 
-
-        // dd($data);
         return view(
             'search',
             [

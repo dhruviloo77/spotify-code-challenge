@@ -80,6 +80,34 @@
 
         </div>
     </div>
+
+
+<div class="container">
+
+    <div class="row">
+
+        <ul class="column p-3">
+        @foreach($album as $d)
+            <li class="list-group-item active"> {{ $d->name }} <span><img src="{{ $d->images[0]->url }}" width="100"></span></li>
+        @endforeach
+        </ul>
+
+        <ul class="column p-3">
+        @foreach($artist as $d)
+            <li class="list-group-item active"> {{ $d->name }} <span><img src="{{ $d->images[0]->url }}" width="100"></span></li>
+        @endforeach
+        </ul>
+
+        <ul class="column p-3">
+        @foreach($track as $d)
+            <li class="list-group-item active"> {{ $d->name }} <span><img src="{{ $d->album->images[0]->url }}" width="100"></span></li>
+        @endforeach
+        </ul>
+        
+        
+        </div>
+    </div>
+</div>
 </body>
 
 </html>

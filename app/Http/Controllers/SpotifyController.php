@@ -12,9 +12,9 @@ class SpotifyController extends Controller
 
         $client_id = config('services.spotify.client_id'); // Spotify App Client Id 
         $client_secret = config('services.spotify.client_secret'); // Spotify App Client Secret
-        $header = 'Basic ' . base64_encode($client_id . ":" . $client_secret); // Base 64 Encoding for Id & Secret for Authorization field 
+        $header = 'Basic '.base64_encode($client_id.":".$client_secret); // Base 64 Encoding for Id & Secret for Authorization field 
 
-
+        
         // Creating New Client and assigning base url
         $client = new Client([
             // Base URI is used with relative requests
@@ -34,6 +34,8 @@ class SpotifyController extends Controller
         ]);
 
         $body = json_decode((string) $response->getBody()); //Decoding JSON data to fetch String Values
+
+        return $body->token_type.' '.$body->access_token;
 
         return $body->token_type . ' ' . $body->access_token;
     }
