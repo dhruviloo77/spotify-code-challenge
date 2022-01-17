@@ -1,3 +1,57 @@
+<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400"></a></p>
+
+<p align="center">
+<a href="https://travis-ci.org/laravel/framework"><img src="https://travis-ci.org/laravel/framework.svg" alt="Build Status"></a>
+<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
+<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
+<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
+</p>
+
+### Tech Stack Used
+
+- PHP 7.4.9
+- Laravel 5.8(Composer defined template)
+- Guzzle
+- Spotify Web API
+- Bootstrap
+
+### To run the application
+
+- Change the .env according to local variables (SPOTIFY_CLIENT_ID,SPOTIFY_CLIENT_SECRET)
+- Run `php artisan serve` to run the app on the browser. Alternatively you can use WAMP or Linux Server
+
+### Below are the snapshot of the application
+
+## Landing Page - Enter your search keyword
+
+![image](https://user-images.githubusercontent.com/36239404/149759857-bb821236-f3f0-4802-9746-6a006296d28c.png)
+
+## Results of your query divided into Albums, Artists & Tracks
+
+![image](https://user-images.githubusercontent.com/36239404/149759979-e4923b65-ac6b-47cd-bb70-ffe4562e8d10.png)
+
+## Select specific result to view more info
+
+![image](https://user-images.githubusercontent.com/36239404/149760043-8f8915fc-91c7-4668-b9e0-478dfd4c3836.png)
+
+Diffrent results
+
+![image](https://user-images.githubusercontent.com/36239404/149760236-fc18de7c-0669-4329-bceb-e7f09319ece3.png)
+
+![image](https://user-images.githubusercontent.com/36239404/149760328-2d8372ac-7087-4c98-95b0-475c3c28c07b.png)
+
+Look out for Listen to play button to directly listen to selected results on Spotify
+
+## Todo / Can be done
+
+- Add more validation and error handling
+    - Already added : If there is no image, it displays ALT text No Thumbnail
+- Some code snippets like Guzzle/Client is used multiple times. So it can be one class and rest of the functions can use it by appending values to base_uri
+- Unit Tests
+-  Introduce Migrations to save data (Database)
+
+
+
 # Laravel Code Challenge
 
 This code test involves the creation of a working project with the help of the Laravel framework.
